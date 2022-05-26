@@ -14,6 +14,12 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            // Call the loader to the "rules" array 
+            // chained loaders run in order from right to left
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     },
@@ -33,3 +39,6 @@ module.exports = {
     })
     ]
 }
+
+// to install scss loaders
+// npm i -D style-loader node-sass css-loader sass-loader
